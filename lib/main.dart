@@ -45,19 +45,50 @@ class MyPage extends StatelessWidget {
                 backgroundImage: AssetImage('assets/choonsik_3.png'),
                 backgroundColor: Colors.white,
               ),
+              otherAccountsPictures: <Widget>[
+                CircleAvatar(
+                    backgroundImage: AssetImage('assets/choonsik_party.png'),
+                    backgroundColor: Colors.white),
+                // CircleAvatar(
+                //   backgroundImage:AssetImage('assets/choonsik_party.png'),
+                //   backgroundColor:Colors.white
+                // ),
+              ],
               accountName: Text('춘식'),
               accountEmail: Text('choonsik@kakao.com'),
               onDetailsPressed: () {
                 print("arrow is clicked");
               },
               decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0)
-                )
-              ),
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40.0),
+                      bottomRight: Radius.circular(40.0))),
             ),
+            ListTile(
+              leading: Icon(Icons.home, color: Colors.grey[850]),
+              title: Text('Home'),
+              onTap: () {
+                print('Home is clicked');
+              },
+              trailing: Icon(Icons.add)
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: Colors.grey[850]),
+              title: Text('Settings'),
+              onTap: () {
+                print('Settings is clicked');
+              },
+              trailing: Icon(Icons.add)
+            ),
+            ListTile(
+              leading: Icon(Icons.question_answer, color: Colors.grey[850]),
+              title: Text('Q&A'),
+              onTap: () {
+                print('Q&A is clicked');
+              },
+              trailing: Icon(Icons.add)
+            )
           ],
         ),
       ),
