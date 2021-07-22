@@ -66,32 +66,47 @@ class MyPage extends StatelessWidget {
                       bottomRight: Radius.circular(40.0))),
             ),
             ListTile(
-              leading: Icon(Icons.home, color: Colors.grey[850]),
-              title: Text('Home'),
-              onTap: () {
-                print('Home is clicked');
-              },
-              trailing: Icon(Icons.add)
-            ),
+                leading: Icon(Icons.home, color: Colors.grey[850]),
+                title: Text('Home'),
+                onTap: () {
+                  print('Home is clicked');
+                },
+                trailing: Icon(Icons.add)),
             ListTile(
-              leading: Icon(Icons.settings, color: Colors.grey[850]),
-              title: Text('Settings'),
-              onTap: () {
-                print('Settings is clicked');
-              },
-              trailing: Icon(Icons.add)
-            ),
+                leading: Icon(Icons.settings, color: Colors.grey[850]),
+                title: Text('Settings'),
+                onTap: () {
+                  print('Settings is clicked');
+                },
+                trailing: Icon(Icons.add)),
             ListTile(
-              leading: Icon(Icons.question_answer, color: Colors.grey[850]),
-              title: Text('Q&A'),
-              onTap: () {
-                print('Q&A is clicked');
-              },
-              trailing: Icon(Icons.add)
-            )
+                leading: Icon(Icons.question_answer, color: Colors.grey[850]),
+                title: Text('Q&A'),
+                onTap: () {
+                  print('Q&A is clicked');
+                },
+                trailing: Icon(Icons.add))
           ],
         ),
       ),
+      body: Builder(
+        builder: (BuildContext ctx) {
+          return Center(
+            child: TextButton(
+              onPressed: () {
+                ScaffoldMessenger.of(ctx).showSnackBar(
+                  SnackBar(content: Text('Hellow')),
+                );
+              },
+              child: Text('버튼', style: TextStyle(color: Colors.white)),
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                backgroundColor: Colors.red,
+              ),
+            ),
+          );
+        },
+      )
     );
   }
 }
